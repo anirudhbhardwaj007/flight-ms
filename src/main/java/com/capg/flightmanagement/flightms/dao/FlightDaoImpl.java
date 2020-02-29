@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.capg.flightmanagement.flightms.entities.Flight;
+import com.capg.flightmanagement.flightms.exceptions.FlightAlreadyExistException;
 import com.capg.flightmanagement.flightms.exceptions.FlightNotExistException;
 import com.capg.flightmanagement.flightms.exceptions.FlightNotFoundException;
 import com.capg.flightmanagement.flightms.exceptions.InvalidFlightNumberException;
@@ -16,7 +17,7 @@ public class FlightDaoImpl implements IFlightDao {
 	@Override
 	public Flight addFlight(Flight flight) {
 		if (flightList.contains(flight)) {
-			// throw new FlightAlreadyExistException("Flight already Exist");
+			throw new FlightAlreadyExistException("Flight already Exist");
 		}
 		flightList.add(flight);
 		return flight;
