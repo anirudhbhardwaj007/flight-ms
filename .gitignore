@@ -3,6 +3,7 @@ target/
 .idea/
 *.iml
 bin
+<<<<<<< HEAD
  target
  .seetings
  .project
@@ -10,3 +11,14 @@ bin
  .idea
  *.log
  *.iml
+=======
+
+
+target
+.settings
+.project
+.classpath
+.idea
+*.log
+*.iml
+>>>>>>> 6882ce861f1d1ec7dc1c40895d86061970cc4428
