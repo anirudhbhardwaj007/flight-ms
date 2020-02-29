@@ -1,0 +1,123 @@
+package com.capg.flightmanagement.userms.service;
+
+import java.math.BigInteger;
+import java.util.*;
+
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.function.Executable;
+
+import com.capg.flightmanagement.userms.dao.UserDaoImpl;
+import com.capg.flightmanagement.userms.entities.User;
+import com.capg.flightmanagement.userms.exceptions.IncorrectArgumentException;
+import com.capg.flightmanagement.userms.exceptions.IncorrectIdException;
+import com.capg.flightmanagement.userms.exceptions.InvalidUserIdException;
+import com.capg.flightmanagement.userms.exceptions.UserNotFoundException;
+
+
+public class UserServiceImplTest {
+	UserServiceImpl service;
+
+	@BeforeEach
+	public void setup() {
+		service = new UserServiceImpl(new UserDaoImpl());
+	}
+
+	@AfterEach
+	public void clear() {
+		UserDaoImpl.userList.clear();
+	}
+
+	@Test
+	public void testAddUser_1()
+
+	{
+		User user = new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
+				"anshka@gmail.com");
+		List<User> userList = UserDaoImpl.userList;
+		userList.add(user);
+		System.out.print("inside testadd service=" + service);
+		User result = service.addUser(user);
+
+		Assertions.assertEquals(user.getUserType(), result.getUserType());
+		Assertions.assertEquals(user.getId(), result.getId());
+		Assertions.assertEquals(user.getUserName(), result.getUserName());
+		Assertions.assertEquals(user.getPassword(), result.getPassword());
+		Assertions.assertEquals(user.getPhone(), result.getPhone());
+		Assertions.assertEquals(user.getEmail(), result.getEmail());
+
+	}
+
+	@Test
+	public void testAddUser_2() {
+
+		Executable executable = () -> service.addUser(null);
+		Assertions.assertThrows(IncorrectArgumentException.class, executable);
+
+	}
+	@Test
+	public void testUpdateUser_1()
+	{
+		User updateUser=new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
+				"anshka@gmail.com");
+		Executable executable = () -> service.updateUser(updateUser);
+		Assertions.assertThrows(UserNotFoundException.class, executable);
+		
+	}
+	@Test
+	public void testUpdateUser_2()
+	{
+		User user=new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
+				"anshka@gmail.com");
+		List<User> userList=UserDaoImpl.userList;
+		userList.add(user);
+		User updateduser=new User("user", new BigInteger("235677"), "appy", "mword", new BigInteger("689"),
+				"ansha@gmail.com");
+		User result=service.updateUser(updateduser);
+		
+		Assertions.assertEquals(user.getId(),result.getId());
+	}
+	
+	@Test
+	public void testViewUserById_1()
+	{
+		User user=new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
+				"anshka@gmail.com");
+		List<User> userList=UserDaoImpl.userList;
+		userList.add(user);
+		BigInteger userId=user.getId();
+		User result=service.viewUserById(userId);
+		Assertions.assertEquals(user, result);
+		
+	}
+	@Test
+	public void testViewUser()
+	{   User user=new User();
+		List<User> userList=UserDaoImpl.userList;
+		List<User> list=service.viewUser(user);
+		Assertions.assertEquals(userList, list);
+		
+		
+	}
+	@Test
+	public void deleteUser()
+	{
+		Executable executable = ()-> service.deleteUser(null);
+		Assertions.assertThrows(IncorrectIdException.class, executable);
+		
+	}
+	
+	@Test
+	public void testDeleteUser() {
+		User user = new User();
+		user.setId(BigInteger.ONE);
+		List<User> listUser = UserDaoImpl.userList;
+		listUser.add(user);
+		BigInteger userId = user.getId();
+		service.deleteUser(userId);
+		boolean isEmpty = listUser.isEmpty();
+		Assertions.assertEquals(true, isEmpty);
+	}
+	
+	
+
+}
