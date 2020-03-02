@@ -8,24 +8,22 @@ import scheduledms.entities.ScheduledFlight;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 public interface IScheduledFlightDao {
 
 
+    ScheduledFlight scheduleFlight(ScheduledFlight scheduledFlight); //schedules a flight
 
-    ScheduledFlight scheduleFlight(ScheduledFlight scheduledFlight);
+    List<ScheduledFlight> viewScheduledFlights(Airport sourceArg, Airport destinationArg, LocalDate time); //view list on the basis of source airport,destination airport and localdate
 
-    List<ScheduledFlight> viewScheduledFlights(Airport sourceArg, Airport destinationArg, LocalDate time);
+    Flight viewScheduledFlights(BigInteger flightNumber); // view scheduled flight on the basis of flight number
 
-    Flight viewScheduledFlights(BigInteger flightNumber);
+    List<ScheduledFlight> viewScheduledFlight(); //list all the scheduled flight
 
-    List<ScheduledFlight> viewScheduledFlight();
+    ScheduledFlight modifyScheduledFlight(Flight flight, Schedule schedule);  //modify schedule on the basis of flight
 
-    ScheduledFlight modifyScheduledFlight(Flight flight, Schedule schedule, int a);
-
-    void deleteScheduledFlight(BigInteger flightNumber );
+    void deleteScheduledFlight(BigInteger flightNumber); //delete scheduledfight on the basis of flightnumber
 
 
 }

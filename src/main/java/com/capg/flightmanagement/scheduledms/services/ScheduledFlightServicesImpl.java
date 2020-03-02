@@ -5,31 +5,54 @@ import scheduledms.entities.Airport;
 import scheduledms.entities.Flight;
 import scheduledms.entities.Schedule;
 import scheduledms.entities.ScheduledFlight;
-import scheduledms.exceptions.*;
+import scheduledms.exceptions.IncorrectArgumentException;
+import scheduledms.util.ScheduledFlightValidations;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
 import java.util.List;
 
 public class ScheduledFlightServicesImpl implements IScheduledFlightServices {
-    private IScheduledFlightDao dao;
+    private IScheduledFlightDao dao; //declare data access object
 
+    /**
+     *
+     * @param dao intialize the data acess object
+     */
     public ScheduledFlightServicesImpl(IScheduledFlightDao dao) {
+
         this.dao = dao;
     }
 
+    /**
+     *
+     * @param scheduledFlight  reference of scheduled flight
+     * @return flight is scheduled calling from dao class and scheduling it return flight is scheduled
+     */
     @Override
     public ScheduledFlight scheduleFlight(ScheduledFlight scheduledFlight) {
         ScheduledFlight flightisscheduled = dao.scheduleFlight(scheduledFlight);
         return flightisscheduled;
     }
 
+    /**
+     *
+     * @param sourceArg
+     * @param destinationArg
+     * @param time taking argument from dao class and calling here
+     * @return scheduledflight which is object of list of scheduled flight
+     */
     @Override
     public List<ScheduledFlight> viewScheduledFlights(Airport sourceArg, Airport destinationArg, LocalDate time) {
         List<ScheduledFlight> scheduledFlight1 = dao.viewScheduledFlights(sourceArg, destinationArg, time);
         return scheduledFlight1;
     }
 
+    /**
+     *
+     * @param flightNumber taking flight number if flight is null throw exception
+     * @return    calling view schedule from dao class and return flight if flight number is taken
+     */
     @Override
     public Flight viewScheduledFlights(BigInteger flightNumber) {
         if (flightNumber == null) {
@@ -39,18 +62,32 @@ public class ScheduledFlightServicesImpl implements IScheduledFlightServices {
         return flight1;
     }
 
+    /**
+     *
+     * @return taking list object and calling the method from dao class
+     */
     @Override
     public List<ScheduledFlight> viewScheduledFlight() {
         List<ScheduledFlight> flightschedule = dao.viewScheduledFlight();
         return flightschedule;
     }
 
+    /**
+     *
+     * @param flight taking argument of flight and calling the method from the given class which is dao
+     * @param schedule taking argument of schedule and calling the method from the given class which is dao
+     * @return returning scheduledflight object with modified flight
+     */
     @Override
-    public ScheduledFlight modifyScheduledFlight(Flight flight, Schedule schedule, int a) {
-        ScheduledFlight f1 = dao.modifyScheduledFlight(flight, schedule, a);
+    public ScheduledFlight modifyScheduledFlight(Flight flight, Schedule schedule) {
+        ScheduledFlight f1 = dao.modifyScheduledFlight(flight, schedule);
         return f1;
     }
 
+    /**
+     *
+     * @param flightNumber   Taking flight number as argument and if flight number is null throw exception or else delete flight
+     */
     @Override
     public void deleteScheduledFlight(BigInteger flightNumber) {
         if (flightNumber == null) {
@@ -60,20 +97,14 @@ public class ScheduledFlightServicesImpl implements IScheduledFlightServices {
 
     }
 
+    /**
+     *
+     * @param scheduledFlightValidate
+     */
     @Override
     public void validateScheduledFlight(ScheduledFlight scheduledFlightValidate) {
-        if (scheduledFlightValidate == null) {
-            throw new ScheduledFlightIsNullException("Scheduled Flight Not Found");
-        }
-        if(scheduledFlightValidate.getAvailableseats()<=0){
-            throw new SeatsNotAvailableExceptions("Seats are not available");
-        }
-        if(scheduledFlightValidate.getFlight()==null){
-            throw new FlightNotFoundException("Flight Not Found");
-        }
-        if(scheduledFlightValidate.getSchedule()==null){
-            throw new ScheduleNotFoundException("Schedule Not Found ");
-        }
+        ScheduledFlightValidations.validateScheduledFlightvalid(scheduledFlightValidate);
+
 
     }
 

@@ -4,9 +4,7 @@ import scheduledms.entities.Airport;
 import scheduledms.entities.Flight;
 import scheduledms.entities.Schedule;
 import scheduledms.entities.ScheduledFlight;
-import scheduledms.exceptions.FlightNotFoundException;
-import scheduledms.exceptions.ScheduleAlreadyExistsException;
-import scheduledms.exceptions.ScheduleNotFoundException;
+import scheduledms.exceptions.*;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
@@ -16,8 +14,15 @@ import java.util.List;
 
 public class ScheduledFlightDaoImp implements IScheduledFlightDao {
 
-    public static List<ScheduledFlight> scheduledFlightsStore = new ArrayList<ScheduledFlight>();
+    public static List<ScheduledFlight> scheduledFlightsStore = new ArrayList<ScheduledFlight>(); //Creating attributes of scheduled flight using Array list and storing the elements in array list
 
+    //Overriding the method and defining by implementing the Interface
+
+    /**
+     *
+     * @param scheduledFlight    if scheduledflight are already there throw exception or add schedule flight
+     * @return   Scheduled flight
+     */
     @Override
     public ScheduledFlight scheduleFlight(ScheduledFlight scheduledFlight) {
         if (scheduledFlightsStore.contains(scheduledFlight)) {
@@ -27,6 +32,14 @@ public class ScheduledFlightDaoImp implements IScheduledFlightDao {
         return scheduledFlight;
     }
 
+    /**
+     *
+     * @param sourceArg    getting source airport via schedule class via scheduledFlight class
+     * @param destinationArg  getting destination airport via schedule class via scheduledflight
+     * @param departureDateArg  getting departure  time via schedule via departure time and putting all equal if it is equal add schedule
+     * @return   desired which is list object of scheduled flight
+     * @Traverse traversing the list from scheduledflight to scheduledflightsstore
+     */
     @Override
     public List<ScheduledFlight> viewScheduledFlights(Airport sourceArg, Airport destinationArg, LocalDate departureDateArg) {
         List<ScheduledFlight> desired = new ArrayList<>();
@@ -36,7 +49,7 @@ public class ScheduledFlightDaoImp implements IScheduledFlightDao {
             LocalDate departureDate = scheduledFlight.getSchedule().getDepartureTime().toLocalDate();
             if (sourcePort.equals(sourceArg)
                     && destPort.equals(destinationArg)
-                    && departureDate.equals(departureDate)) {
+                    && departureDate.equals(departureDateArg)) {
                 desired.add(scheduledFlight);
 
             }
@@ -44,6 +57,12 @@ public class ScheduledFlightDaoImp implements IScheduledFlightDao {
         return desired;
 
     }
+
+    /**
+     *
+     * @param flightNumber    traversing the schedule flight to scheduledflightstore
+     * @return flight if given flight number is equal to flightnumber or else throw exception
+     */
 
     @Override
     public Flight viewScheduledFlights(BigInteger flightNumber) {
@@ -58,9 +77,13 @@ public class ScheduledFlightDaoImp implements IScheduledFlightDao {
 
         }
 
-        throw new FlightNotFoundException("Flight not found " + flightNumber);
+        throw new IncorrectArgumentException("Flight not found " + flightNumber);
     }
 
+    /**
+     *
+     * @return  creating list of scheduled flight to travere and store it into the list and return list
+     */
     @Override
     public List<ScheduledFlight> viewScheduledFlight() {
         List<ScheduledFlight> list = new ArrayList<>();
@@ -71,7 +94,11 @@ public class ScheduledFlightDaoImp implements IScheduledFlightDao {
         return list;
     }
 
-
+    /**
+     *
+     * @param flightNumber   using iterator of the list checking the next value if next value equals the given value then remove the flight
+     *                       or else throw exception
+     */
     @Override
     public void deleteScheduledFlight(BigInteger flightNumber) {
         /*
@@ -90,13 +117,19 @@ public class ScheduledFlightDaoImp implements IScheduledFlightDao {
                 return;
             }
         }
-        throw new FlightNotFoundException("Flight not found ");
+        throw new IncorrectArgumentException("Flight not found ");
 
     }
 
+    /**
+     *
+     * @param flight traversing the list and checking if flight object given equals to scheduled flight object set schedule
+     * @param schedule else throw exception
+     * @return
+     */
 
     @Override
-    public ScheduledFlight modifyScheduledFlight(Flight flight, Schedule schedule, int a) {
+    public ScheduledFlight modifyScheduledFlight(Flight flight, Schedule schedule) {
         for (ScheduledFlight scheduledFlight : scheduledFlightsStore) {
             if (scheduledFlight.getFlight().equals(flight)) {
                 scheduledFlight.setSchedule(schedule);

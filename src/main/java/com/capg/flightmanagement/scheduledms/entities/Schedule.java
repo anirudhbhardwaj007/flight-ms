@@ -4,17 +4,18 @@ import java.time.LocalDateTime;
 
 
 public class Schedule  {
-    Airport sourceAirport;
-    Airport destinationAirport;
-    LocalDateTime arrivalTime;
-    LocalDateTime departureTime;
+    //declaring variables
+    private Airport sourceAirport;
+    private Airport destinationAirport;
+    private LocalDateTime arrivalTime;
+    private LocalDateTime departureTime;
 
-
+      //Intializing constructor
     public Schedule(){
         this(null,null,null,null);
 
     }
-
+      //Constructor
     public Schedule(Airport sourceAirport, Airport destinationAirport, LocalDateTime arrivalTime, LocalDateTime departureTime) {
 
         this.sourceAirport = sourceAirport;
@@ -22,7 +23,7 @@ public class Schedule  {
         this.arrivalTime = arrivalTime;
         this.departureTime = departureTime;
     }
-
+//Getter and Setter
     public Airport getSourceAirport() {
         return sourceAirport;
     }

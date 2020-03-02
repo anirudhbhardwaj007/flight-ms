@@ -2,18 +2,18 @@ package scheduledms.entities;
 
 import java.util.Objects;
 
-public class ScheduledFlight  {
+public class ScheduledFlight {
+    //declaring variables
+    private int availableseats;
+    private Flight flight;
+    private Schedule schedule;
 
-  private  int availableseats;
-   private Flight flight;
-   private Schedule schedule;
+    //Intializing constructor
+    public ScheduledFlight() {
+        this(0, null, null);
+    }
 
-
-   public ScheduledFlight() {
-       this(0,null,null);
-   }
-
-
+    //Constructor
     public ScheduledFlight(int availableseats, Flight flight, Schedule schedule) {
         this.availableseats = availableseats;
         this.flight = flight;
@@ -21,7 +21,7 @@ public class ScheduledFlight  {
     }
 
 
-
+    //Getters and Setters
     public int getAvailableseats() {
         return availableseats;
     }
@@ -46,6 +46,7 @@ public class ScheduledFlight  {
         this.schedule = schedule;
     }
 
+    //Equals method
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -56,8 +57,11 @@ public class ScheduledFlight  {
                 getSchedule().equals(that.getSchedule());
     }
 
+
+    //HashCode
     @Override
     public int hashCode() {
+
         return Objects.hash(getAvailableseats(), getFlight(), getSchedule());
     }
 }
