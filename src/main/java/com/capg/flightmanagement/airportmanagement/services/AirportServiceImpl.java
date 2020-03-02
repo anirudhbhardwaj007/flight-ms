@@ -1,9 +1,10 @@
-package com.capg.flightmanagement.airportmanagement.services;
+package airportmanagement.services;
 import java.util.*;
 
 import com.capg.flightmanagement.airportmanagement.dao.IAirportDao;
 import com.capg.flightmanagement.airportmanagement.entities.Airport;
-import com.capg.flightmanagement.airportmanagement.util.Validation;
+import com.capg.flightmanagement.airportmanagement.services.IAirportService;
+import util.AirportValidation;
 
 public class AirportServiceImpl implements IAirportService {
 	private IAirportDao dao;
@@ -21,7 +22,7 @@ public class AirportServiceImpl implements IAirportService {
 	//returns airport name on the basis of airport code.
 	@Override
 	public String viewAirport(String airportCode) {
-		Validation.validateCode(airportCode);
+		AirportValidation.validateCode(airportCode);
 		String airportDetails=dao.viewAirport(airportCode);
 		return airportDetails;
 	}

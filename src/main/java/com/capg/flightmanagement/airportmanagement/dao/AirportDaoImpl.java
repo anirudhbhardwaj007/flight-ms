@@ -1,4 +1,4 @@
-package com.capg.flightmanagement.airportmanagement.dao;
+package airportmanagement.dao;
 import java.util.ArrayList;
 import java.util.List;
 

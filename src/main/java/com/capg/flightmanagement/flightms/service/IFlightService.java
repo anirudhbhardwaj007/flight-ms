@@ -1,4 +1,4 @@
-package com.capg.flightmanagement.flightms.service;
+package flightms.service;
 
 import java.math.BigInteger;
 import java.util.List;

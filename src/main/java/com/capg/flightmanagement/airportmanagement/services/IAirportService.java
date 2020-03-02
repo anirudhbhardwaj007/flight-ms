@@ -1,4 +1,4 @@
-package com.capg.flightmanagement.airportmanagement.services;
+package airportmanagement.services;
 import java.util.List;
 
 import com.capg.flightmanagement.airportmanagement.entities.Airport;

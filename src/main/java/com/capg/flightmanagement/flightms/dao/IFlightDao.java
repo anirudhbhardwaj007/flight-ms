@@ -1,4 +1,4 @@
-package com.capg.flightmanagement.flightms.dao;
+package flightms.dao;
 
 import java.math.BigInteger;
 import java.util.List;

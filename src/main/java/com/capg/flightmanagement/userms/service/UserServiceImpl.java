@@ -1,4 +1,4 @@
-package com.capg.flightmanagement.userms.service;
+package userms.service;
 
 import java.math.BigInteger;
 import java.util.List;
@@ -9,6 +9,7 @@ import com.capg.flightmanagement.userms.entities.User;
 import com.capg.flightmanagement.userms.exceptions.IncorrectArgumentException;
 import com.capg.flightmanagement.userms.exceptions.IncorrectIdException;
 import com.capg.flightmanagement.userms.util.Validation;
+import util.UserValidation;
 
 import java.math.BigInteger;
 
@@ -103,7 +104,8 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public void validateUser(User user)
 	{
-		Validation.ValidateUser(user);
+
+		UserValidation.ValidateUser(user);
 	}
 
 }

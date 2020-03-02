@@ -7,6 +7,7 @@ import scheduledms.entities.Schedule;
 import scheduledms.entities.ScheduledFlight;
 import scheduledms.exceptions.IncorrectArgumentException;
 import scheduledms.util.ScheduledFlightValidations;
+import util.ScheduledFlightValidation;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
@@ -103,7 +104,7 @@ public class ScheduledFlightServicesImpl implements IScheduledFlightServices {
      */
     @Override
     public void validateScheduledFlight(ScheduledFlight scheduledFlightValidate) {
-        ScheduledFlightValidations.validateScheduledFlightvalid(scheduledFlightValidate);
+        ScheduledFlightValidation.validateScheduledFlightvalid(scheduledFlightValidate);
 
 
     }

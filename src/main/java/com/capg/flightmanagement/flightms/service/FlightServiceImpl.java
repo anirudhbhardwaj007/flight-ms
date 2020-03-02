@@ -1,4 +1,4 @@
-package com.capg.flightmanagement.flightms.service;
+package flightms.service;
 
 import java.math.BigInteger;
 import java.util.List;
@@ -81,6 +81,7 @@ public class FlightServiceImpl implements IFlightService {
 	 */
 	@Override
 	public void validateFlight(Flight flight) {
+
 		FlightValidation.validateFlight(flight);
 	}
 

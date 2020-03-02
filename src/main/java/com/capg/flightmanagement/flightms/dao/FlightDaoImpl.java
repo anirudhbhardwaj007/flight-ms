@@ -1,10 +1,11 @@
-package com.capg.flightmanagement.flightms.dao;
+package flightms.dao;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import com.capg.flightmanagement.flightms.dao.IFlightDao;
 import com.capg.flightmanagement.flightms.entities.Flight;
 import com.capg.flightmanagement.flightms.exceptions.FlightAlreadyExistException;
 import com.capg.flightmanagement.flightms.exceptions.FlightNotExistException;
