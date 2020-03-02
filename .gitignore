@@ -5,7 +5,7 @@ target/
 bin
 <<<<<<< HEAD
  target
- .seetings
+ .settings
  .project
  .classpath
  .idea
