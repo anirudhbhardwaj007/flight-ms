@@ -28,6 +28,7 @@ public class UserServiceImplTest {
 	}
 
 	@Test
+	//Test Case for adding user
 	public void testAddUser_1()
 
 	{
@@ -48,6 +49,7 @@ public class UserServiceImplTest {
 	}
 
 	@Test
+	//Test Case for checking exception while adding
 	public void testAddUser_2() {
 
 		Executable executable = () -> service.addUser(null);
@@ -55,6 +57,7 @@ public class UserServiceImplTest {
 
 	}
 	@Test
+	//Test case for update user exception
 	public void testUpdateUser_1()
 	{
 		User updateUser=new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
@@ -64,6 +67,7 @@ public class UserServiceImplTest {
 		
 	}
 	@Test
+	//Test Case for updating user
 	public void testUpdateUser_2()
 	{
 		User user=new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
@@ -78,6 +82,7 @@ public class UserServiceImplTest {
 	}
 	
 	@Test
+	//Test Case for viewSuserById
 	public void testViewUserById_1()
 	{
 		User user=new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
@@ -90,8 +95,11 @@ public class UserServiceImplTest {
 		
 	}
 	@Test
+	//Test Case for viewing UserList
 	public void testViewUser()
-	{   User user=new User();
+	{   
+		User user=new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
+				"anshka@gmail.com");
 		List<User> userList=UserDaoImpl.userList;
 		List<User> list=service.viewUser(user);
 		Assertions.assertEquals(userList, list);
@@ -99,6 +107,7 @@ public class UserServiceImplTest {
 		
 	}
 	@Test
+	//Test Case for deleting the user(checking exception)
 	public void deleteUser()
 	{
 		Executable executable = ()-> service.deleteUser(null);
@@ -107,8 +116,10 @@ public class UserServiceImplTest {
 	}
 	
 	@Test
+	//Test Case for deleting the user
 	public void testDeleteUser() {
-		User user = new User();
+		User user=new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
+				"anshka@gmail.com");
 		user.setId(BigInteger.ONE);
 		List<User> listUser = UserDaoImpl.userList;
 		listUser.add(user);

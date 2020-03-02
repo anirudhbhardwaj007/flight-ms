@@ -1,70 +1,84 @@
 package com.capg.flightmanagement.userms.entities;
 
-
 import java.math.BigInteger;
 
+import com.capg.flightmanagement.userms.util.Validation;
+
 public class User {
-	//atrributes
+	// attributes
 	private String UserType;
 	private BigInteger id;
 	private String userName;
 	private String password;
 	private BigInteger Phone;
 	private String email;
-	public User()
-	{
-		this("admin",null," ","***",null,"xxyzs@hm");
-	}
-	public User(String UserType,BigInteger id,String userName,String password,BigInteger Phone,String email)
-	{
-		this.UserType=UserType;
-		this.id=id;
-		this.userName=userName;
-		this.password=password;
-		this.Phone=Phone;
-		this.email=email;
+//constructor
+	public User() {
 		
+		this("", null, " ", "***", null, "");
 	}
-	
+//constructor
+	public User(String UserType, BigInteger id, String userName, String password, BigInteger Phone, String email) {
+		this.UserType = UserType;
+		this.id = id;
+		this.userName = userName;
+		this.password = password;
+		Validation.validatePhone(Phone);
+		this.Phone = Phone;
+		Validation.validateEmail(email);
+		this.email = email;
+
+	}
+	//getter and setters
+
 	public String getUserType() {
 		return UserType;
 	}
+
 	public void setUserType(String userType) {
 		UserType = userType;
 	}
+
 	public BigInteger getId() {
 		return id;
 	}
+
 	public void setId(BigInteger id) {
 		this.id = id;
 	}
+
 	public String getUserName() {
 		return userName;
 	}
+
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public BigInteger getPhone() {
 		return Phone;
 	}
+
 	public void setPhone(BigInteger phone) {
 		Phone = phone;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
-	
+
 	@Override
 	public int hashCode() {
 		return id.hashCode();
@@ -92,6 +106,5 @@ public class User {
 		return "User [UserType=" + UserType + ", id=" + id + ", userName=" + userName + ", password=" + password
 				+ ", Phone=" + Phone + ", email=" + email + "]";
 	}
-	
 
 }

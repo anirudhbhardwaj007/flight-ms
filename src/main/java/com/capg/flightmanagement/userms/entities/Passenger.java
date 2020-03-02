@@ -2,12 +2,20 @@ package com.capg.flightmanagement.userms.entities;
 
 import java.math.BigInteger;
 
+import com.capg.flightmanagement.userms.util.Validation;
+
 public class Passenger {
+	//attributes
 	private BigInteger PNR_No;
 	private String passengerName;
 	private int passengerAge;
 	private BigInteger passengerUin;
 	private double luggage;
+	public Passenger()
+	{
+		this(null,"",0,null,0.0);
+	}
+	//constructor
 	public Passenger(BigInteger pNR_No, String passengerName, int passengerAge, BigInteger passengerUin,
 			double luggage)
 	{
@@ -15,9 +23,11 @@ public class Passenger {
 		this.PNR_No = PNR_No;
 		this.passengerName = passengerName;
 		this.passengerAge = passengerAge;
+		Validation.validateUin(passengerUin);
 		this.passengerUin = passengerUin;
 		this.luggage = luggage;
 	}
+	
 	public BigInteger getPNR_No() {
 		return PNR_No;
 	}

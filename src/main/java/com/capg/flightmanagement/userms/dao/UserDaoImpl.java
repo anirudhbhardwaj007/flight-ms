@@ -6,11 +6,17 @@ import java.util.*;
 import com.capg.flightmanagement.userms.entities.User;
 import com.capg.flightmanagement.userms.exceptions.InvalidUserIdException;
 import com.capg.flightmanagement.userms.exceptions.UserNotFoundException;
+import com.capg.flightmanagement.userms.util.Validation;
 
 public class UserDaoImpl implements IUserDao {
+	//List to store the UserData
 	public static List<User> userList = new ArrayList<>();
 
-	// to add user in list
+	/**
+	 * @param :takes the object of user(reference) which we wants to add
+	 * if null throws exception else
+	 * @return :object of user(reference) after adding
+	 */
 	@Override
 	public User addUser(User user) {
 		if (user == null) {
@@ -19,9 +25,14 @@ public class UserDaoImpl implements IUserDao {
 		userList.add(user);
 		return user;
 	}
+	
+	/**
+	 * @param: userId as BigInteger 
+	 * traverse the list if UserId founds proceed further else through exception
+	 * @return :return the object of user(reference) which has that userId
+	 */
 
 	@Override
-	// we can view the user by id
 	public User viewUserById(BigInteger id) {
 		for (User user : userList) {
 			BigInteger userId = user.getId();
@@ -32,8 +43,11 @@ public class UserDaoImpl implements IUserDao {
 		throw new UserNotFoundException("UserId not found");
 
 	}
+	/**
+	 * @param:Object of user(reference) to view the details of all users
+	 * @return: after traversing return userList
+	 */
 
-	// we can view all the user
 	@Override
 	public List<User> viewUser(User user) {
 		List<User> allUsers = new ArrayList<>();
@@ -46,7 +60,10 @@ public class UserDaoImpl implements IUserDao {
 
 	}
 
-	// we can update user and will put in map
+	/**
+	 * @param: takes the object of user(reference) ,makes update if not found throw exception
+	 * @return: updated user
+	 */
 	@Override
 	public User updateUser(User user) {
 		if (!userList.contains(user)) {
@@ -57,7 +74,11 @@ public class UserDaoImpl implements IUserDao {
 		return user;
 	}
 
-	// we can remove the user by id
+	/**
+	 * @param: takes userId as BigInteger iterates the list
+	 *  until id founds ,if not throw exception
+	 *  if founds remove that from list
+	 */
 	@Override
 	public void deleteUser(BigInteger userId) {
 
@@ -73,5 +94,6 @@ public class UserDaoImpl implements IUserDao {
 		throw new InvalidUserIdException("UserId is invalid");
 
 	}
+	
 
 }
