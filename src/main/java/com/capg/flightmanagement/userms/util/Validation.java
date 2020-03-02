@@ -26,7 +26,7 @@ public static void validatePhone(BigInteger phoneNo)
 	int size=uinNo.length();
 	if(size!=12)
 {
-	throw new IncorrectArgumentException("Phone number is Invalid");
+	throw new IncorrectArgumentException("Uin number is Invalid");
 }
 	
 	
