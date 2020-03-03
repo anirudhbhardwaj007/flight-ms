@@ -1,4 +1,4 @@
-package flightms.dao;
+package com.capg.flightmanagement.flightms.dao;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -7,10 +7,10 @@ import java.util.List;
 
 import com.capg.flightmanagement.flightms.dao.IFlightDao;
 import com.capg.flightmanagement.flightms.entities.Flight;
-import com.capg.flightmanagement.flightms.exceptions.FlightAlreadyExistException;
-import com.capg.flightmanagement.flightms.exceptions.FlightNotExistException;
-import com.capg.flightmanagement.flightms.exceptions.FlightNotFoundException;
-import com.capg.flightmanagement.flightms.exceptions.InvalidFlightNumberException;
+import com.capg.flightmanagement.exceptions.FlightAlreadyExistException;
+import com.capg.flightmanagement.exceptions.FlightNotExistException;
+import com.capg.flightmanagement.exceptions.FlightNotFoundException;
+
 
 public class FlightDaoImpl implements IFlightDao {
 	public static List<Flight> flightList = new ArrayList<>(); // declare arrayList to store all flights

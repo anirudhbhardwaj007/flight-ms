@@ -1,4 +1,4 @@
-package airportmanagement.dao;
+package com.capg.flightmanagement.airportmanagement.dao;
 import java.util.*;
 
 import com.capg.flightmanagement.airportmanagement.entities.Airport;

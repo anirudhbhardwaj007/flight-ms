@@ -1,17 +1,18 @@
-package scheduledms.services;
+package com.capg.flightmanagement.scheduledms.services;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
-import scheduledms.dao.ScheduledFlightDaoImp;
-import scheduledms.entities.Flight;
-import scheduledms.entities.Schedule;
-import scheduledms.entities.ScheduledFlight;
-import scheduledms.exceptions.IncorrectArgumentException;
-import scheduledms.exceptions.ScheduleAlreadyExistsException;
-import scheduledms.exceptions.ScheduleNotFoundException;
+
+import com.capg.flightmanagement.exceptions.IncorrectArgumentException;
+import com.capg.flightmanagement.exceptions.ScheduleAlreadyExistsException;
+import com.capg.flightmanagement.exceptions.ScheduleNotFoundException;
+import com.capg.flightmanagement.flightms.entities.Flight;
+import com.capg.flightmanagement.scheduledms.dao.ScheduledFlightDaoImp;
+import com.capg.flightmanagement.scheduledms.entities.Schedule;
+import com.capg.flightmanagement.scheduledms.entities.ScheduledFlight;
 
 import java.math.BigInteger;
 import java.util.List;
@@ -101,7 +102,7 @@ public class ScheduledFlightServiceImplTest {
         List<ScheduledFlight> list = service.viewScheduledFlight();
         Assertions.assertEquals(list1, list);
     }
-    //done list vla
+   
 
 
     @Test

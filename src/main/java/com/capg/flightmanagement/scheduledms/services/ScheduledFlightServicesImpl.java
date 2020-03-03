@@ -1,17 +1,17 @@
-package scheduledms.services;
+package com.capg.flightmanagement.scheduledms.services;
 
-import scheduledms.dao.IScheduledFlightDao;
-import scheduledms.entities.Airport;
-import scheduledms.entities.Flight;
-import scheduledms.entities.Schedule;
-import scheduledms.entities.ScheduledFlight;
-import scheduledms.exceptions.IncorrectArgumentException;
-import scheduledms.util.ScheduledFlightValidations;
-import util.ScheduledFlightValidation;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
 import java.util.List;
+
+import com.capg.flightmanagement.airportmanagement.entities.Airport;
+import com.capg.flightmanagement.exceptions.*;
+import com.capg.flightmanagement.flightms.entities.Flight;
+import com.capg.flightmanagement.scheduledms.dao.IScheduledFlightDao;
+import com.capg.flightmanagement.scheduledms.entities.Schedule;
+import com.capg.flightmanagement.scheduledms.entities.ScheduledFlight;
+import com.capg.flightmanagement.util.ScheduledFlightValidation;
 
 public class ScheduledFlightServicesImpl implements IScheduledFlightServices {
     private IScheduledFlightDao dao; //declare data access object

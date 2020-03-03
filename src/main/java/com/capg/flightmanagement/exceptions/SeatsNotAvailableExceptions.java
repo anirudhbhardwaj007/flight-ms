@@ -1,4 +1,4 @@
-package exceptions;
+package com.capg.flightmanagement.exceptions;
 
 public class SeatsNotAvailableExceptions extends RuntimeException {
 

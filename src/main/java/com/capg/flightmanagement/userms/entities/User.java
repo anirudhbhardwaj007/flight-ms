@@ -1,8 +1,8 @@
-package userms.entities;
+package com.capg.flightmanagement.userms.entities;
 
 import java.math.BigInteger;
 
-import com.capg.flightmanagement.userms.util.Validation;
+import com.capg.flightmanagement.util.UserValidation;
 
 public class User {
 	// attributes
@@ -23,9 +23,9 @@ public class User {
 		this.id = id;
 		this.userName = userName;
 		this.password = password;
-		Validation.validatePhone(Phone);
+		UserValidation.validatePhone(Phone);
 		this.Phone = Phone;
-		Validation.validateEmail(email);
+		UserValidation.validateEmail(email);
 		this.email = email;
 
 	}

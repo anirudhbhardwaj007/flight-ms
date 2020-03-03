@@ -6,12 +6,12 @@ import java.util.*;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.function.Executable;
 
+import com.capg.flightmanagement.exceptions.IncorrectArgumentException;
+import com.capg.flightmanagement.exceptions.IncorrectIdException;
+import com.capg.flightmanagement.exceptions.UserNotFoundException;
 import com.capg.flightmanagement.userms.dao.UserDaoImpl;
 import com.capg.flightmanagement.userms.entities.User;
-import com.capg.flightmanagement.userms.exceptions.IncorrectArgumentException;
-import com.capg.flightmanagement.userms.exceptions.IncorrectIdException;
-import com.capg.flightmanagement.userms.exceptions.InvalidUserIdException;
-import com.capg.flightmanagement.userms.exceptions.UserNotFoundException;
+
 
 
 public class UserServiceImplTest {
@@ -33,7 +33,7 @@ public class UserServiceImplTest {
 
 	{
 		User user = new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
-				"anshka@gmail.com");
+				"anushka@gmail.com");
 		List<User> userList = UserDaoImpl.userList;
 		userList.add(user);
 		System.out.print("inside testadd service=" + service);

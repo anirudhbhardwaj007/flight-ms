@@ -1,14 +1,16 @@
-package scheduledms.services;
+package com.capg.flightmanagement.scheduledms.services;
 
-import scheduledms.entities.Airport;
-import scheduledms.entities.Flight;
-import scheduledms.entities.Schedule;
-import scheduledms.entities.ScheduledFlight;
+
 
 import java.math.BigInteger;
 import java.time.LocalDate;
 
 import java.util.List;
+
+import com.capg.flightmanagement.airportmanagement.entities.Airport;
+import com.capg.flightmanagement.flightms.entities.Flight;
+import com.capg.flightmanagement.scheduledms.entities.Schedule;
+import com.capg.flightmanagement.scheduledms.entities.ScheduledFlight;
 
 public interface IScheduledFlightServices {
     ScheduledFlight scheduleFlight(ScheduledFlight scheduledFlight); //schedules a flight  will be called here

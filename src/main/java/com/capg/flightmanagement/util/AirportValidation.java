@@ -1,6 +1,6 @@
-package util;
+package com.capg.flightmanagement.util;
 
-import com.capg.flightmanagement.airportmanagement.exceptions.InvalidArgumentException;
+import com.capg.flightmanagement.exceptions.InvalidArgumentException;
 
 public class AirportValidation {
     public static void validateCode(String code) {

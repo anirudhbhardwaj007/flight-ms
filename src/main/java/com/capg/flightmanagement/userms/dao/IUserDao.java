@@ -1,4 +1,4 @@
-package userms.dao;
+package com.capg.flightmanagement.userms.dao;
 
 
 import java.math.BigInteger;

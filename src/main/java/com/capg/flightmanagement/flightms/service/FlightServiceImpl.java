@@ -1,13 +1,13 @@
-package flightms.service;
+package com.capg.flightmanagement.flightms.service;
 
 import java.math.BigInteger;
 import java.util.List;
 
 import com.capg.flightmanagement.flightms.dao.IFlightDao;
 import com.capg.flightmanagement.flightms.entities.Flight;
-import com.capg.flightmanagement.flightms.exceptions.InvalidArgumentException;
-import com.capg.flightmanagement.flightms.exceptions.InvalidFlightNumberException;
-import com.capg.flightmanagement.flightms.util.FlightValidation;
+import com.capg.flightmanagement.exceptions.InvalidArgumentException;
+import com.capg.flightmanagement.exceptions.InvalidFlightNumberException;
+import com.capg.flightmanagement.util.FlightValidation;
 
 public class FlightServiceImpl implements IFlightService {
 

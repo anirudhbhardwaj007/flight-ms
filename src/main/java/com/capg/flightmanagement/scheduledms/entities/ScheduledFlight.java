@@ -1,6 +1,8 @@
-package scheduledms.entities;
+package com.capg.flightmanagement.scheduledms.entities;
 
 import java.util.Objects;
+
+import com.capg.flightmanagement.flightms.entities.Flight;
 
 public class ScheduledFlight {
     //declaring variables

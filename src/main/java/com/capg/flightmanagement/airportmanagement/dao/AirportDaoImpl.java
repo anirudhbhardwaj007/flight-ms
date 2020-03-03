@@ -1,9 +1,9 @@
-package airportmanagement.dao;
+package com.capg.flightmanagement.airportmanagement.dao;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.capg.flightmanagement.airportmanagement.entities.Airport;
-import com.capg.flightmanagement.airportmanagement.exceptions.InvalidArgumentException;
+import com.capg.flightmanagement.exceptions.InvalidArgumentException;
 public class AirportDaoImpl implements IAirportDao {
 
 	public static List<Airport>airPortList = new ArrayList<Airport>();

@@ -1,4 +1,4 @@
-package airportmanagement.entities;
+package com.capg.flightmanagement.airportmanagement.entities;
 
 public class Airport {
     String airportName;

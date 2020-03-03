@@ -6,7 +6,7 @@ import org.junit.jupiter.api.function.Executable;
 
 import com.capg.flightmanagement.airportmanagement.dao.AirportDaoImpl;
 import com.capg.flightmanagement.airportmanagement.entities.Airport;
-import com.capg.flightmanagement.airportmanagement.exceptions.InvalidArgumentException;
+import com.capg.flightmanagement.exceptions.InvalidArgumentException;
 import com.capg.flightmanagement.airportmanagement.services.AirportServiceImpl;
 
 public class AirportServiceImplTest {

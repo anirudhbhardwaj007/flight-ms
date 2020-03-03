@@ -1,4 +1,4 @@
-package util;
+package com.capg.flightmanagement.util;
 
 import java.util.regex.*;
 

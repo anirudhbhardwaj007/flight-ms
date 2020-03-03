@@ -1,4 +1,4 @@
-package login;
+package com.capg.flightmanagement.login;
 
 
 public interface IAuthenticationDao<ID,P> {

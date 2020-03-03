@@ -1,7 +1,8 @@
-package util;
+package com.capg.flightmanagement.util;
 
+import com.capg.flightmanagement.exceptions.IncorrectArgumentException;
 import com.capg.flightmanagement.userms.entities.User;
-import com.capg.flightmanagement.userms.exceptions.IncorrectArgumentException;
+
 
 import java.math.BigInteger;
 import java.util.regex.Matcher;

@@ -2,7 +2,9 @@ package com.capg.flightmanagement.userms.entities;
 
 import java.math.BigInteger;
 
-import com.capg.flightmanagement.userms.util.Validation;
+import com.capg.flightmanagement.util.UserValidation;
+
+
 
 public class Passenger {
 	//attributes
@@ -23,7 +25,7 @@ public class Passenger {
 		this.PNR_No = PNR_No;
 		this.passengerName = passengerName;
 		this.passengerAge = passengerAge;
-		Validation.validateUin(passengerUin);
+		UserValidation.validateUin(passengerUin);
 		this.passengerUin = passengerUin;
 		this.luggage = luggage;
 	}

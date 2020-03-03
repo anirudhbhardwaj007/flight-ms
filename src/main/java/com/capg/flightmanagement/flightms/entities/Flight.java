@@ -1,4 +1,4 @@
-package flightms.entities;
+package com.capg.flightmanagement.flightms.entities;
 
 import java.math.BigInteger;
 import java.util.Objects;

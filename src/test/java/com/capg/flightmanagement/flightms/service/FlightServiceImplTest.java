@@ -9,13 +9,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
+import com.capg.flightmanagement.exceptions.FlightAlreadyExistException;
+import com.capg.flightmanagement.exceptions.FlightNotExistException;
+import com.capg.flightmanagement.exceptions.FlightNotFoundException;
+import com.capg.flightmanagement.exceptions.InvalidArgumentException;
+import com.capg.flightmanagement.exceptions.InvalidFlightNumberException;
 import com.capg.flightmanagement.flightms.dao.FlightDaoImpl;
 import com.capg.flightmanagement.flightms.entities.Flight;
-import com.capg.flightmanagement.flightms.exceptions.FlightAlreadyExistException;
-import com.capg.flightmanagement.flightms.exceptions.FlightNotExistException;
-import com.capg.flightmanagement.flightms.exceptions.FlightNotFoundException;
-import com.capg.flightmanagement.flightms.exceptions.InvalidArgumentException;
-import com.capg.flightmanagement.flightms.exceptions.InvalidFlightNumberException;
+
 
 public class FlightServiceImplTest {
 	private FlightServiceImpl service; // declare service variable

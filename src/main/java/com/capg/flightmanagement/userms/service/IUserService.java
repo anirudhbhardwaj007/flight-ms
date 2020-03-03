@@ -1,4 +1,4 @@
-package userms.service;
+package com.capg.flightmanagement.userms.service;
 
 
 import java.math.BigInteger;

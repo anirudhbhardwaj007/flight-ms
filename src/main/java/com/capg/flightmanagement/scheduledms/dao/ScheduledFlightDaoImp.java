@@ -1,10 +1,11 @@
-package scheduledms.dao;
+package com.capg.flightmanagement.scheduledms.dao;
 
-import scheduledms.entities.Airport;
-import scheduledms.entities.Flight;
-import scheduledms.entities.Schedule;
-import scheduledms.entities.ScheduledFlight;
-import scheduledms.exceptions.*;
+
+import com.capg.flightmanagement.scheduledms.entities.Schedule;
+import com.capg.flightmanagement.scheduledms.entities.ScheduledFlight;
+import com.capg.flightmanagement.airportmanagement.entities.Airport;
+import com.capg.flightmanagement.exceptions.*;
+import com.capg.flightmanagement.flightms.entities.Flight;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
@@ -82,7 +83,7 @@ public class ScheduledFlightDaoImp implements IScheduledFlightDao {
 
     /**
      *
-     * @return  creating list of scheduled flight to travere and store it into the list and return list
+     * @return  creating list of scheduled flight to traverse and store it into the list and return list
      */
     @Override
     public List<ScheduledFlight> viewScheduledFlight() {

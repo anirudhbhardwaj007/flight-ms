@@ -1,12 +1,12 @@
-package userms.dao;
+package com.capg.flightmanagement.userms.dao;
 
 import java.math.BigInteger;
 import java.util.*;
 
 import com.capg.flightmanagement.userms.entities.User;
-import com.capg.flightmanagement.userms.exceptions.InvalidUserIdException;
-import com.capg.flightmanagement.userms.exceptions.UserNotFoundException;
-import com.capg.flightmanagement.userms.util.Validation;
+import com.capg.flightmanagement.exceptions.InvalidUserIdException;
+import com.capg.flightmanagement.exceptions.UserNotFoundException;
+
 
 public class UserDaoImpl implements IUserDao {
 	//List to store the UserData

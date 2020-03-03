@@ -1,10 +1,12 @@
-package util;
+package com.capg.flightmanagement.util;
 
+import com.capg.flightmanagement.exceptions.InvalidArgumentException;
+import com.capg.flightmanagement.exceptions.InvalidFlightModelException;
+import com.capg.flightmanagement.exceptions.InvalidFlightNumberException;
+import com.capg.flightmanagement.exceptions.InvalidSeatCapacityException;
 import com.capg.flightmanagement.flightms.entities.Flight;
-import com.capg.flightmanagement.flightms.exceptions.InvalidArgumentException;
-import com.capg.flightmanagement.flightms.exceptions.InvalidFlightModelException;
-import com.capg.flightmanagement.flightms.exceptions.InvalidFlightNumberException;
-import com.capg.flightmanagement.flightms.exceptions.InvalidSeatCapacityException;
+
+
 
 public class FlightValidation {
 	public static void validateFlight(Flight flight) {

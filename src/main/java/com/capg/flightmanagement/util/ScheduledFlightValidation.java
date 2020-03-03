@@ -1,10 +1,10 @@
-package util;
+package com.capg.flightmanagement.util;
 
-import scheduledms.entities.ScheduledFlight;
-import scheduledms.exceptions.FlightNotFoundException;
-import scheduledms.exceptions.ScheduleNotFoundException;
-import scheduledms.exceptions.ScheduledFlightIsNullException;
-import scheduledms.exceptions.SeatsNotAvailableExceptions;
+import com.capg.flightmanagement.exceptions.FlightNotFoundException;
+import com.capg.flightmanagement.exceptions.ScheduleNotFoundException;
+import com.capg.flightmanagement.exceptions.ScheduledFlightIsNullException;
+import com.capg.flightmanagement.exceptions.SeatsNotAvailableExceptions;
+import com.capg.flightmanagement.scheduledms.entities.ScheduledFlight;
 
 public  class ScheduledFlightValidation{
 

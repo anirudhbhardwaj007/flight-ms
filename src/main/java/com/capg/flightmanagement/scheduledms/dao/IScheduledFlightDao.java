@@ -1,9 +1,11 @@
-package scheduledms.dao;
+package com.capg.flightmanagement.scheduledms.dao;
 
-import scheduledms.entities.Airport;
-import scheduledms.entities.Flight;
-import scheduledms.entities.Schedule;
-import scheduledms.entities.ScheduledFlight;
+
+
+import com.capg.flightmanagement.airportmanagement.entities.Airport;
+import com.capg.flightmanagement.flightms.entities.Flight;
+import com.capg.flightmanagement.scheduledms.entities.Schedule;
+import com.capg.flightmanagement.scheduledms.entities.ScheduledFlight;
 
 
 import java.math.BigInteger;

@@ -1,6 +1,8 @@
-package scheduledms.entities;
+package com.capg.flightmanagement.scheduledms.entities;
 
 import java.time.LocalDateTime;
+
+import com.capg.flightmanagement.airportmanagement.entities.Airport;
 
 
 public class Schedule  {

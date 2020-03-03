@@ -1,10 +1,10 @@
-package airportmanagement.services;
+package com.capg.flightmanagement.airportmanagement.services;
 import java.util.*;
 
 import com.capg.flightmanagement.airportmanagement.dao.IAirportDao;
 import com.capg.flightmanagement.airportmanagement.entities.Airport;
 import com.capg.flightmanagement.airportmanagement.services.IAirportService;
-import util.AirportValidation;
+import com.capg.flightmanagement.util.AirportValidation;
 
 public class AirportServiceImpl implements IAirportService {
 	private IAirportDao dao;

@@ -1,4 +1,4 @@
-package exceptions;
+package com.capg.flightmanagement.exceptions;
 /**
  * 
  * this class extends the RuntimeException  for making userDefine exception
