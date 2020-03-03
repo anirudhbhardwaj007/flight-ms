@@ -1,9 +1,7 @@
-package com.capg.flightmanagement.exceptions;
-public class UserNotFoundException extends RuntimeException{
+package com.capg.flightmanagement.bookingms.exceptions;
 
-
-	public UserNotFoundException(String msg){
-		super(msg);
-	}
-
+public class UserNotFoundException extends RuntimeException {
+public UserNotFoundException(String msg) {
+	super(msg);
+}
 }

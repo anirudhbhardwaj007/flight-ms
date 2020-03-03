@@ -1,10 +1,7 @@
-package com.capg.flightmanagement.exceptions;
+package com.capg.flightmanagement.bookingms.exceptions;
 
-public class FlightNotFoundException extends RuntimeException {
-
-    public  FlightNotFoundException(String msg){
-        super(msg);
-    }
-
-
+public class FlightNotFoundException extends RuntimeException{
+public FlightNotFoundException(String msg) {
+super(msg);
+}
 }

@@ -4,18 +4,15 @@ import java.math.BigInteger;
 import java.util.*;
 import com.capg.flightmanagement.bookingms.dao.*;
 import com.capg.flightmanagement.bookingms.entities.Booking;
-import com.capg.flightmanagement.bookingms.exceptions.FlightNotFoundException;
-import com.capg.flightmanagement.bookingms.exceptions.InvalidAgeException;
-import com.capg.flightmanagement.bookingms.exceptions.ModificationNotFoundException;
-import com.capg.flightmanagement.bookingms.exceptions.NoBookingDeletedException;
-import com.capg.flightmanagement.bookingms.exceptions.NoBookingFoundException;
-import com.capg.flightmanagement.bookingms.exceptions.PassengerNotFoundException;
-import com.capg.flightmanagement.bookingms.exceptions.TicketCostInvalidException;
-import com.capg.flightmanagement.bookingms.exceptions.UserNotFoundException;
-import com.capg.flightmanagement.bookingms.util.BookingValidation;
-import com.capg.flightmanagement.flightms.exceptions.InvalidArgumentException;
+
+import com.capg.flightmanagement.exceptions.ModificationNotFoundException;
+import com.capg.flightmanagement.exceptions.NoBookingDeletedException;
+import com.capg.flightmanagement.exceptions.NoBookingFoundException;
+
+
+
 import com.capg.flightmanagement.userms.entities.Passenger;
-import com.capg.flightmanagement.userms.exceptions.IncorrectArgumentException;
+
 
 public class BookingServiceImpl implements IBookingService {
 	private IBookingDao dao;
@@ -72,14 +69,14 @@ public class BookingServiceImpl implements IBookingService {
 
 	@Override
 	public void validateBooking(Booking booking) {
-		BookingValidation.validatePassengerNumber();
+		com.capg.flightmanagement.bookingms.util.BookingValidation.validatePassengerNumber();
 
 
 	}
 
 @Override
 public void validatePassenger(Passenger passenger) {
-	BookingValidation.validatePassenger(passenger);
+	com.capg.flightmanagement.bookingms.util.BookingValidation.validatePassenger(passenger);
 
 }
 }

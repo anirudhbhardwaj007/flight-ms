@@ -1,4 +1,4 @@
-package com.capg.flightmanagement.bookingms.exceptions;
+package com.capg.flightmanagement.exceptions;
 
 public class InvalidAgeException extends RuntimeException{
 public InvalidAgeException(String msg) {

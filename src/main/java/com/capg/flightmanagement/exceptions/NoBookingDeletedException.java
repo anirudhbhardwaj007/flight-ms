@@ -1,4 +1,4 @@
-package com.capg.flightmanagement.bookingms.exceptions;
+package com.capg.flightmanagement.exceptions;
 
 public class NoBookingDeletedException extends RuntimeException {
 public NoBookingDeletedException(String msg) {

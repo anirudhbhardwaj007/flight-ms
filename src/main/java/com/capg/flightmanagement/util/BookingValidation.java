@@ -1,17 +1,14 @@
-package com.capg.flightmanagement.bookingms.util;
+package com.capg.flightmanagement.util;
 
 import com.capg.flightmanagement.bookingms.entities.Booking;
 import com.capg.flightmanagement.bookingms.exceptions.FlightNotFoundException;
-import com.capg.flightmanagement.bookingms.exceptions.InvalidAgeException;
-import com.capg.flightmanagement.bookingms.exceptions.NoBookingFoundException;
-import com.capg.flightmanagement.bookingms.exceptions.PassengerNotFoundException;
-import com.capg.flightmanagement.bookingms.exceptions.TicketCostInvalidException;
+
 import com.capg.flightmanagement.bookingms.exceptions.UserNotFoundException;
+import com.capg.flightmanagement.exceptions.*;
 import com.capg.flightmanagement.flightms.entities.Flight;
-import com.capg.flightmanagement.flightms.exceptions.InvalidArgumentException;
-import com.capg.flightmanagement.flightms.exceptions.InvalidPassengerNumberException;
+
 import com.capg.flightmanagement.userms.entities.Passenger;
-import com.capg.flightmanagement.userms.exceptions.IncorrectArgumentException;
+
 
 public class BookingValidation {
  
@@ -22,7 +19,7 @@ public class BookingValidation {
 	 Flight flight=new Flight();
 	 int seatcapacity=flight.getSeatCapacity();
 	  if(numberofpassanger>seatcapacity) {
-		throw new InvalidPassengerNumberException("invalid passenger number") ; 
+		throw new InvalidArgumentException("invalid passenger number") ;
 	  }
   }
 
