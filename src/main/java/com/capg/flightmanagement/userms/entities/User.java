@@ -9,16 +9,16 @@ public class User {
 	private String UserType;
 	private BigInteger id;
 	private String userName;
-	private String password;
+	private Password password;
 	private BigInteger Phone;
 	private String email;
 //constructor
 	public User() {
 		
-		this("", null, " ", "***", null, "");
+		this("", null, " ", null, null, "");
 	}
 //constructor
-	public User(String UserType, BigInteger id, String userName, String password, BigInteger Phone, String email) {
+	public User(String UserType, BigInteger id, String userName, Password password, BigInteger Phone, String email) {
 		this.UserType = UserType;
 		this.id = id;
 		this.userName = userName;
@@ -55,11 +55,11 @@ public class User {
 		this.userName = userName;
 	}
 
-	public String getPassword() {
+	public Password getPassword() {
 		return password;
 	}
 
-	public void setPassword(String password) {
+	public void setPassword(Password password) {
 		this.password = password;
 	}
 

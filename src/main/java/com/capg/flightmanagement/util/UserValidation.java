@@ -66,7 +66,7 @@ public class UserValidation {
         {
             throw new IncorrectArgumentException("UserName is not found");
         }
-        if(user.getPassword()==null||user.getPassword().isEmpty())
+        if(user.getPassword()==null)
         {
             throw new IncorrectArgumentException("Password not mentioned");
         }
