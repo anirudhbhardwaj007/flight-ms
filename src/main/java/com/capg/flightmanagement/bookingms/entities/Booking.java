@@ -3,14 +3,14 @@ import com.capg.flightmanagement.flightms.entities.Flight;
 import com.capg.flightmanagement.userms.entities.User;
 import com.capg.flightmanagement.userms.entities.Passenger;
 import java.math.*;
-import java.sql.Date;
+import java.util.Date;
 import java.util.*;
 
 public class Booking {
 	
 	private BigInteger bookingId;
 	private User user;
-	private Double ticketCost;
+	private double ticketCost;
 	private int noOfPassenger;
 	private Flight flight;
 	private Date BookingDate;
@@ -58,10 +58,10 @@ public class Booking {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public Double getTicketCost() {
+	public double getTicketCost() {
 		return ticketCost;
 	}
-	public void setTicketCost(Double ticketCost) {
+	public void setTicketCost(double ticketCost) {
 		this.ticketCost = ticketCost;
 	}
 	public int getNoOfPassenger() {
@@ -90,13 +90,13 @@ public class Booking {
 		this.passengerList = passengerList;
 	}
 	
-	public Booking(BigInteger bookingId, Double ticketCost, int noOfPassenger, Flight flight, Date bookingDate,
+	public Booking(BigInteger bookingId, double ticketCost, int noOfPassenger, Flight flight, Date bookingDate,
 			List<Passenger> passengerList) {
 		this.bookingId = bookingId;
 		this.ticketCost = ticketCost;
 		this.noOfPassenger = noOfPassenger;
 		this.flight = flight;
-		BookingDate = bookingDate;
+		this.BookingDate = bookingDate;
 		this.passengerList = passengerList;
 	}
 	

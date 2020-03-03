@@ -18,7 +18,7 @@ public class Passenger {
 		this(null,"",0,null,0.0);
 	}
 	//constructor
-	public Passenger(BigInteger pNR_No, String passengerName, int passengerAge, BigInteger passengerUin,
+	public Passenger(BigInteger PNR_No, String passengerName, int passengerAge, BigInteger passengerUin,
 			double luggage)
 	{
 	

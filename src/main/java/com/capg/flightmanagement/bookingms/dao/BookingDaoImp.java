@@ -5,7 +5,6 @@ import java.util.*;
 
 import com.capg.flightmanagement.bookingms.entities.Booking;
 import com.capg.flightmanagement.userms.entities.Passenger;
-import com.capg.flightmanagement.userms.entities.User;
 
 public class BookingDaoImp implements IBookingDao {
 	public static List<Booking> bookingList = new ArrayList<>();
