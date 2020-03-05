@@ -1,11 +1,38 @@
 package com.capg.flightmanagement.scheduledms.entities;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 import com.capg.flightmanagement.airportmanagement.entities.Airport;
 
 
 public class Schedule  {
+    @Override
+    public String toString() {
+        return "Schedule{" +
+                "sourceAirport=" + sourceAirport +
+                ", destinationAirport=" + destinationAirport +
+                ", arrivalTime=" + arrivalTime +
+                ", departureTime=" + departureTime +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Schedule)) return false;
+        Schedule schedule = (Schedule) o;
+        return Objects.equals(getSourceAirport(), schedule.getSourceAirport()) &&
+                Objects.equals(getDestinationAirport(), schedule.getDestinationAirport()) &&
+                Objects.equals(getArrivalTime(), schedule.getArrivalTime()) &&
+                Objects.equals(getDepartureTime(), schedule.getDepartureTime());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getSourceAirport(), getDestinationAirport(), getArrivalTime(), getDepartureTime());
+    }
+
     //declaring variables
     private Airport sourceAirport;
     private Airport destinationAirport;

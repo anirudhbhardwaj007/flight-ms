@@ -51,11 +51,11 @@ public class ScheduledFlightDaoImp implements IScheduledFlightDao {
             if (sourcePort.equals(sourceArg)
                     && destPort.equals(destinationArg)
                     && departureDate.equals(departureDateArg)) {
-                desired.add(scheduledFlight);
+                scheduledFlightsStore.add(scheduledFlight);
 
             }
         }
-        return desired;
+        return scheduledFlightsStore;
 
     }
 
@@ -69,15 +69,10 @@ public class ScheduledFlightDaoImp implements IScheduledFlightDao {
     public Flight viewScheduledFlights(BigInteger flightNumber) {
         for (ScheduledFlight scheduledFlight : scheduledFlightsStore) {
             Flight flight = scheduledFlight.getFlight();
-
-
             if (flight.getFlightNumber().equals(flightNumber)) {
-
                 return flight;
             }
-
         }
-
         throw new IncorrectArgumentException("Flight not found " + flightNumber);
     }
 

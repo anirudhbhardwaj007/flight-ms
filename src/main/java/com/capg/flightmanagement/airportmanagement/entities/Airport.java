@@ -1,5 +1,7 @@
 package com.capg.flightmanagement.airportmanagement.entities;
 
+import java.util.Objects;
+
 public class Airport {
     String airportName;
     String airportCode;
@@ -34,4 +36,25 @@ public class Airport {
         this.airportCode = airportCode;
         this.airportLocation = airportLocation;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Airport)) return false;
+        Airport airport = (Airport) o;
+        return Objects.equals(getAirportName(), airport.getAirportName()) &&
+                Objects.equals(getAirportCode(), airport.getAirportCode()) &&
+                Objects.equals(getAirportLocation(), airport.getAirportLocation());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getAirportName(), getAirportCode(), getAirportLocation());
+    }
+
+    @Override
+    public  String toString(){
+        return "Aiport Name :"+airportName+" "+"Airport code :"+airportLocation+" "+"Airport Location :"+airportLocation;
+    }
+
 }

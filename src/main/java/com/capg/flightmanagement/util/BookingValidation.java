@@ -1,9 +1,9 @@
 package com.capg.flightmanagement.util;
 
 import com.capg.flightmanagement.bookingms.entities.Booking;
-import com.capg.flightmanagement.bookingms.exceptions.FlightNotFoundException;
+import com.capg.flightmanagement.exceptions.FlightNotFoundException;
 
-import com.capg.flightmanagement.bookingms.exceptions.UserNotFoundException;
+import com.capg.flightmanagement.exceptions.UserNotFoundException;
 import com.capg.flightmanagement.exceptions.*;
 import com.capg.flightmanagement.flightms.entities.Flight;
 
@@ -35,7 +35,7 @@ public static void validateBooking(Booking b) {
 		throw new FlightNotFoundException("flight not found");
 	} else if (b.getNoOfPassenger() == 0) {
 		throw new PassengerNotFoundException("no passenger Found");
-	} else if (b.getTicketCost() == null) {
+	} else if (b.getTicketCost() == 0) {
 		throw new TicketCostInvalidException("ticket cost invalid");
 	} else if (b.getUser() == null) {
 		throw new UserNotFoundException("User not found ");

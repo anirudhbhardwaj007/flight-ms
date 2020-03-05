@@ -12,6 +12,7 @@ import com.capg.flightmanagement.exceptions.NoBookingFoundException;
 
 
 import com.capg.flightmanagement.userms.entities.Passenger;
+import com.capg.flightmanagement.util.BookingValidation;
 
 
 public class BookingServiceImpl implements IBookingService {
@@ -69,14 +70,14 @@ public class BookingServiceImpl implements IBookingService {
 
 	@Override
 	public void validateBooking(Booking booking) {
-		com.capg.flightmanagement.bookingms.util.BookingValidation.validatePassengerNumber();
+		BookingValidation.validatePassengerNumber();
 
 
 	}
 
 @Override
 public void validatePassenger(Passenger passenger) {
-	com.capg.flightmanagement.bookingms.util.BookingValidation.validatePassenger(passenger);
+	BookingValidation.validatePassenger(passenger);
 
 }
 }

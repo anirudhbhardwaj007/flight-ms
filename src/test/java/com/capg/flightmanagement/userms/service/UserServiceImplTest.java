@@ -3,6 +3,7 @@ package com.capg.flightmanagement.userms.service;
 import java.math.BigInteger;
 import java.util.*;
 
+import com.capg.flightmanagement.userms.entities.Password;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.function.Executable;
 
@@ -32,7 +33,7 @@ public class UserServiceImplTest {
 	public void testAddUser_1()
 
 	{
-		User user = new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
+		User user = new User("admin", new BigInteger("235677"), "happy", new Password("shivam1234"), new BigInteger("6789"),
 				"anushka@gmail.com");
 		List<User> userList = UserDaoImpl.userList;
 		userList.add(user);
@@ -60,7 +61,7 @@ public class UserServiceImplTest {
 	//Test case for update user exception
 	public void testUpdateUser_1()
 	{
-		User updateUser=new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
+		User updateUser=new User("admin", new BigInteger("235677"), "happy", new Password("shivam1234"), new BigInteger("6789"),
 				"anshka@gmail.com");
 		Executable executable = () -> service.updateUser(updateUser);
 		Assertions.assertThrows(UserNotFoundException.class, executable);
@@ -70,11 +71,11 @@ public class UserServiceImplTest {
 	//Test Case for updating user
 	public void testUpdateUser_2()
 	{
-		User user=new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
+		User user=new User("admin", new BigInteger("235677"), "happy", new Password("shivam1234"), new BigInteger("6789"),
 				"anshka@gmail.com");
 		List<User> userList=UserDaoImpl.userList;
 		userList.add(user);
-		User updateduser=new User("user", new BigInteger("235677"), "appy", "mword", new BigInteger("689"),
+		User updateduser=new User("user", new BigInteger("235677"), "appy", new Password("shivam1234"), new BigInteger("689"),
 				"ansha@gmail.com");
 		User result=service.updateUser(updateduser);
 		
@@ -85,7 +86,7 @@ public class UserServiceImplTest {
 	//Test Case for viewSuserById
 	public void testViewUserById_1()
 	{
-		User user=new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
+		User user=new User("admin", new BigInteger("235677"), "happy", new Password("shivam1234"), new BigInteger("6789"),
 				"anshka@gmail.com");
 		List<User> userList=UserDaoImpl.userList;
 		userList.add(user);
@@ -98,7 +99,7 @@ public class UserServiceImplTest {
 	//Test Case for viewing UserList
 	public void testViewUser()
 	{   
-		User user=new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
+		User user=new User("admin", new BigInteger("235677"), "happy", new Password("shivam1234"), new BigInteger("6789"),
 				"anshka@gmail.com");
 		List<User> userList=UserDaoImpl.userList;
 		List<User> list=service.viewUser(user);
@@ -118,7 +119,7 @@ public class UserServiceImplTest {
 	@Test
 	//Test Case for deleting the user
 	public void testDeleteUser() {
-		User user=new User("admin", new BigInteger("235677"), "happy", "msword", new BigInteger("6789"),
+		User user=new User("admin", new BigInteger("235677"), "happy", new Password("shivam1234"), new BigInteger("6789"),
 				"anshka@gmail.com");
 		user.setId(BigInteger.ONE);
 		List<User> listUser = UserDaoImpl.userList;

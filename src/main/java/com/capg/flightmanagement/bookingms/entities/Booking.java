@@ -10,6 +10,21 @@ public class Booking {
 	
 	private BigInteger bookingId;
 	private User user;
+
+
+	@Override
+	public String toString() {
+		return "Booking{" +
+				"bookingId=" + bookingId +
+				", user=" + user +
+				", ticketCost=" + ticketCost +
+				", noOfPassenger=" + noOfPassenger +
+				", flight=" + flight +
+				", BookingDate=" + BookingDate +
+				", passengerList=" + passengerList +
+				'}';
+	}
+
 	private double ticketCost;
 	private int noOfPassenger;
 	private Flight flight;

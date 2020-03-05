@@ -31,6 +31,22 @@ public class AirportDaoImpl implements IAirportDao {
 		}
 		return airPortName;
 	}
-	
+
+	@Override
+	public List<Airport> addAirport(Airport airport) {
+		//List<Airport>airportList = new ArrayList<>();
+		/*for(Airport a : airportList){
+			airportList.add(airport);
+		}*/
+		for(int i=0,limit=airPortList.size();i<limit;i++){
+			Airport airport1 = airPortList.get(i);
+			if(airport1.getAirportCode().equals(airport.getAirportCode())){
+				throw new RuntimeException("Airport Already Exist");
+			}
+			airPortList.add(airport);
+		}
+		return  airPortList;
+	}
+
 }
 

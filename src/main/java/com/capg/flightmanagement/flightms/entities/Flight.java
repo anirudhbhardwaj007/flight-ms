@@ -9,6 +9,16 @@ public class Flight {
     String carrierName;
     int seatCapacity;
 
+    @Override
+    public String toString() {
+        return "Flight{" +
+                "flightNumber=" + flightNumber +
+                ", flightModel='" + flightModel + '\'' +
+                ", carrierName='" + carrierName + '\'' +
+                ", seatCapacity=" + seatCapacity +
+                '}';
+    }
+
     public Flight() {
         this(null,"","",0);
 
@@ -29,7 +39,7 @@ public class Flight {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getFlightNumber(), getFlightModel(), getCarrierName(), getSeatCapacity());
+        return flightNumber.hashCode();
     }
 
     public BigInteger getFlightNumber() {

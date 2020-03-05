@@ -7,6 +7,16 @@ import com.capg.flightmanagement.flightms.entities.Flight;
 public class ScheduledFlight {
     //declaring variables
     private int availableseats;
+
+    @Override
+    public String toString() {
+        return "ScheduledFlight{" +
+                "availableseats=" + availableseats +
+                ", flight=" + flight +
+                ", schedule=" + schedule +
+                '}';
+    }
+
     private Flight flight;
     private Schedule schedule;
 
