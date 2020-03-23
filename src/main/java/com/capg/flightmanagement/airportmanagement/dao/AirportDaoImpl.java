@@ -1,7 +1,8 @@
 package com.capg.flightmanagement.airportmanagement.dao;
 import java.util.*;
 import com.capg.flightmanagement.airportmanagement.entities.Airport;
-import com.capg.flightmanagement.exceptions.InvalidArgumentException;
+import com.capg.flightmanagement.exceptions.AirportExistsException;
+import com.capg.flightmanagement.exceptions.IncorrectArgumentException;
 public class AirportDaoImpl implements IAirportDao {
 
 	public static List<Airport>airPortList = new ArrayList<Airport>();
@@ -27,21 +28,17 @@ public class AirportDaoImpl implements IAirportDao {
 			}
 		}
 		if(airportCode==null) {
-			throw new InvalidArgumentException("Airport Code Should not be Null!");
+			throw new IncorrectArgumentException("Airport Code Should not be Null!");
 		}
 		return airPortName;
 	}
 
 	@Override
 	public List<Airport> addAirport(Airport airport) {
-		//List<Airport>airportList = new ArrayList<>();
-		/*for(Airport a : airportList){
-			airportList.add(airport);
-		}*/
 		for(int i=0,limit=airPortList.size();i<limit;i++){
 			Airport airport1 = airPortList.get(i);
 			if(airport1.getAirportCode().equals(airport.getAirportCode())){
-				throw new RuntimeException("Airport Already Exist");
+				throw new AirportExistsException("Airport Already Exist");
 			}
 			airPortList.add(airport);
 		}

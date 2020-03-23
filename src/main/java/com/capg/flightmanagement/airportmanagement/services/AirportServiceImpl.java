@@ -4,7 +4,7 @@ import java.util.*;
 import com.capg.flightmanagement.airportmanagement.dao.IAirportDao;
 import com.capg.flightmanagement.airportmanagement.entities.Airport;
 import com.capg.flightmanagement.airportmanagement.services.IAirportService;
-import com.capg.flightmanagement.exceptions.InvalidArgumentException;
+import com.capg.flightmanagement.exceptions.IncorrectArgumentException;
 import com.capg.flightmanagement.util.AirportValidation;
 
 public class AirportServiceImpl implements IAirportService {
@@ -31,7 +31,7 @@ public class AirportServiceImpl implements IAirportService {
 	@Override
 	public List<Airport> addAirport(Airport airport) {
 		if(airport==null){
-			throw  new InvalidArgumentException("Airport not found!");
+			throw  new IncorrectArgumentException("Airport not found!");
 		}
 		return dao.addAirport(airport);
 	}
